@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecuraMind - Advanced Security Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#1e293b',
+                        accent: '#3b82f6',
+                        accentHover: '#2563eb',
+                        highlight: '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .grid-pattern {
+            background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="bg-primary text-white font-sans antialiased">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <img src="https://huggingface.co/spaces/Ammar789/deepsite-project-0o740/resolve/main/images/securamind-logo.png" alt="SecuraMind Logo" class="h-10 w-auto">
+                    <span class="text-2xl font-bold tracking-tight">SecuraMind</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-slate-300 hover:text-white transition-colors font-medium">Home</a>
+                    <a href="#features" class="text-slate-300 hover:text-white transition-colors font-medium">Features</a>
+                    <a href="#services" class="text-slate-300 hover:text-white transition-colors font-medium">Services</a>
+                    <a href="#about" class="text-slate-300 hover:text-white transition-colors font-medium">About</a>
+                    <a href="#contact" class="bg-accent hover:bg-accentHover text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105">
+                        Get Started
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-effect border-t border-slate-700/50">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-slate-300 hover:text-white rounded-md">Home</a>
+                <a href="#features" class="block px-3 py-2 text-slate-300 hover:text-white rounded-md">Features</a>
+                <a href="#services" class="block px-3 py-2 text-slate-300 hover:text-white rounded-md">Services</a>
+                <a href="#about" class="block px-3 py-2 text-slate-300 hover:text-white rounded-md">About</a>
+                <a href="#contact" class="block px-3 py-2 text-accent font-medium">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden grid-pattern">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary opacity-90"></div>
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-highlight/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium">
+                        <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
+                        Next Generation Security
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Protect Your Digital <span class="gradient-text">Intelligence</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-400 max-w-lg leading-relaxed">
+                        Advanced AI-powered security solutions that learn, adapt, and protect your most valuable assets in real-time.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="inline-flex items-center justify-center bg-accent hover:bg-accentHover text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-accent/25">
+                            Start Free Trial
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <a href="#services" class="inline-flex items-center justify-center glass-effect text-white px-8 py-4 rounded-full font-semibold hover:bg-slate-700 transition-all border border-slate-600">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6 text-slate-400 text-sm">
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent mr-2"></i>
+                            99.9% Uptime
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent mr-2"></i>
+                            SOC 2 Compliant
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50">
+                        <img src="https://static.photos/technology/1024x576/42" alt="Security Dashboard" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+                        
+                        <!-- Floating Stats Card -->
+                        <div class="absolute bottom-6 left-6 right-6 glass-effect rounded-xl p-4 border border-slate-600">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                        <i data-lucide="activity" class="w-5 h-5 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Active Protection</p>
+                                        <p class="font-semibold text-green-400">Secure</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-2xl font-bold">12,847</p>
+                                    <p class="text-xs text-slate-400">Threats Blocked</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-4 -right-4 bg-accent text-white p-3 rounded-xl shadow-lg animate-float">
+                        <i data-lucide="lock" class="w-6 h-6"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-secondary/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-accent font-semibold text-sm uppercase tracking-wider mb-4">Features</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-6">Enterprise-Grade Security <span class="gradient-text">Simplified</span></h3>
+                <p class="text-slate-400 text-lg">Everything you need to protect your organization's digital infrastructure, powered by advanced machine learning.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                        <i data-lucide="brain" class="w-7 h-7 text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">AI-Powered Detection</h4>
+                    <p class="text-slate-400 leading-relaxed">Advanced neural networks that learn your environment and detect anomalies in real-time with 99.9% accuracy.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-highlight/10 flex items-center justify-center mb-6 group-hover:bg-highlight/20 transition-colors">
+                        <i data-lucide="zap" class="w-7 h-7 text-highlight"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Instant Response</h4>
+                    <p class="text-slate-400 leading-relaxed">Automated threat mitigation that responds to attacks within milliseconds, minimizing potential damage.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="globe" class="w-7 h-7 text-purple-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Global Coverage</h4>
+                    <p class="text-slate-400 leading-relaxed">Distributed security infrastructure protecting your assets across all regions and time zones.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                        <i data-lucide="shield" class="w-7 h-7 text-green-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Zero Trust Architecture</h4>
+                    <p class="text-slate-400 leading-relaxed">Verify every access request regardless of source location with comprehensive identity management.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors">
+                        <i data-lucide="line-chart" class="w-7 h-7 text-orange-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Advanced Analytics</h4>
+                    <p class="text-slate-400 leading-relaxed">Comprehensive security insights and reporting with predictive threat modeling and risk assessment.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
+                        <i data-lucide="users" class="w-7 h-7 text-pink-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Team Collaboration</h4>
+                    <p class="text-slate-400 leading-relaxed">Unified security operations center with role-based access and real-time team coordination tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-accent font-semibold text-sm uppercase tracking-wider mb-4">Our Services</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-6">We help businesses automate smarter, grow faster, and stay secure in a digital world.</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Automation & ERP -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                        <i data-lucide="cpu" class="w-7 h-7 text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">AI Automation & ERP</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4">Streamline your business operations with intelligent automation solutions and enterprise resource planning systems tailored to your needs.</p>
+                    <button onclick="openServiceModal('ai-automation')" class="text-accent hover:text-highlight font-medium flex items-center transition-colors text-left">
+                        Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-highlight/10 flex items-center justify-center mb-6 group-hover:bg-highlight/20 transition-colors">
+                        <i data-lucide="trending-up" class="w-7 h-7 text-highlight"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Digital Marketing</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4">Boost your online presence with data-driven marketing strategies, SEO optimization, and targeted advertising campaigns.</p>
+                    <button onclick="openServiceModal('digital-marketing')" class="text-accent hover:text-highlight font-medium flex items-center transition-colors text-left">
+                        Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- IT Security -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="shield" class="w-7 h-7 text-purple-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">IT Security</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4">Protect your digital assets with comprehensive cybersecurity solutions, threat monitoring, and vulnerability assessments.</p>
+                    <button onclick="openServiceModal('it-security')" class="text-accent hover:text-highlight font-medium flex items-center transition-colors text-left">
+                        Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Facebook Marketing -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i data-lucide="facebook" class="w-7 h-7 text-blue-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Facebook Marketing</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4">Maximize your reach on Facebook with strategic ad campaigns, audience targeting, and engagement optimization.</p>
+                    <button onclick="openServiceModal('facebook-marketing')" class="text-accent hover:text-highlight font-medium flex items-center transition-colors text-left">
+                        Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Instagram & TikTok Automation -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
+                        <i data-lucide="smartphone" class="w-7 h-7 text-pink-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Instagram & TikTok Automation</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4">Grow your social media presence with automated posting, engagement tools, and content scheduling across platforms.</p>
+                    <button onclick="openServiceModal('social-automation')" class="text-accent hover:text-highlight font-medium flex items-center transition-colors text-left">
+                        Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Physical Security -->
+                <div class="group p-8 rounded-2xl glass-effect border border-slate-700/50 hover:border-accent/50 transition-all hover:transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors">
+                        <i data-lucide="camera" class="w-7 h-7 text-orange-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Physical Security</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4">Secure your premises with advanced surveillance systems, access control solutions, and security consulting services.</p>
+                    <button onclick="openServiceModal('physical-security')" class="text-accent hover:text-highlight font-medium flex items-center transition-colors text-left">
+                        Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="py-24 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Is your technology proving to be more headache than helpful?</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">Your automation solutions are reactive rather than proactive</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">You have no clear visibility into your security posture</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">Security concerns keep you up at night</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">Your team keeps explaining the same problems repeatedly</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">Technology is slowing down your growth</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">Response times are unpredictable</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">Lack of confidence in your existing strategy</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i>
+                                <p class="text-slate-400">Your systems don't align with your business needs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-3xl p-8 md:p-12 border border-slate-700/50">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-6">
+                        <i data-lucide="lightbulb" class="w-4 h-4 mr-2"></i>
+                        Solution
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">Let's transform your relationship with technology</h3>
+                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+                        At SecuraMind Technologies, we turn traditional IT and security support on its head by combining enterprise-grade solutions, rapid response, and complete transparency into a single, powerful offering.
+                    </p>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Through our innovative approach, dedicated support team, and proactive security measures, we'll shift your technology from a cost center into a strategic advantage for your business.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center justify-center bg-accent hover:bg-accentHover text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-accent/25">
+                        Get Started Today
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-effect rounded-3xl p-8 md:p-16 border border-slate-700/50">
+                <div class="grid md:grid-cols-4 gap-8 text-center mb-16">
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">500+</div>
+                        <div class="text-slate-400">Enterprise Clients</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">99.9%</div>
+                        <div class="text-slate-400">Uptime SLA</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">24/7</div>
+                        <div class="text-slate-400">Expert Support</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">50M+</div>
+                        <div class="text-slate-400">Threats Blocked</div>
+                    </div>
+                </div>
+
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Trusted by Industry Leaders</h2>
+                    <p class="text-slate-400 text-lg mb-8">SecuraMind has protected Fortune 500 companies, government agencies, and growing startups for over a decade. Our commitment to innovation and excellence has made us a leader in the cybersecurity industry.</p>
+                    
+                    <div class="flex flex-wrap justify-center gap-8 mt-12">
+                        <div class="w-32 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-slate-500 font-semibold">Partner 1</div>
+                        <div class="w-32 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-slate-500 font-semibold">Partner 2</div>
+                        <div class="w-32 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-slate-500 font-semibold">Partner 3</div>
+                        <div class="w-32 h-12 bg-slate-700/50 rounded-lg flex items-center justify-center text-slate-500 font-semibold">Partner 4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-highlight/10"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-accent/5 blur-3xl"></div>
+        
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Secure Your <span class="gradient-text">Digital Future</span>?</h2>
+            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">Join thousands of organizations that trust SecuraMind to protect their most valuable assets. Start your free security assessment today.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center bg-accent hover:bg-accentHover text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-accent/25">
+                    Get Started Free
+                    <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+                <a href="#" class="inline-flex items-center justify-center glass-effect text-white px-8 py-4 rounded-full font-semibold hover:bg-slate-700 transition-all border border-slate-600">
+                    <i data-lucide="play-circle" class="w-5 h-5 mr-2"></i>
+                    Watch Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Detail Modals -->
+    <div id="service-modal" class="fixed inset-0 z-[60] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="closeServiceModal()"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-secondary rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full border border-slate-700">
+                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+                            <h3 class="text-2xl leading-6 font-bold text-white mb-4" id="modal-title">Service Title</h3>
+                            <div class="mt-2">
+                                <div id="modal-content" class="text-slate-300 space-y-4">
+                                    <!-- Content injected via JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" onclick="closeServiceModal()" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-accent text-base font-medium text-white hover:bg-accentHover focus:outline-none sm:ml-3 sm:w-auto sm:text-sm transition-colors">
+                        Close
+                    </button>
+                    <a href="#contact" onclick="closeServiceModal()" class="mt-3 w-full inline-flex justify-center rounded-lg border border-slate-600 shadow-sm px-4 py-2 bg-transparent text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm transition-colors">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-secondary/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-accent font-semibold text-sm uppercase tracking-wider mb-4">Contact</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h3>
+                    <p class="text-slate-400 text-lg mb-8">Have questions about our security solutions? Our team is here to help you find the perfect protection for your organization.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Email</p>
+                                <p class="font-medium">info@securamind.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i data-lucide="phone" class="w-5 h-5 text-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Phone</p>
+                                <p class="font-medium">0479028500<br>0479026001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Address</p>
+                                <p class="font-medium">21 Southern Crescent<br>Craigieburn, Melbourne<br>Australia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4 mt-8">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-700/50 flex items-center justify-center hover:bg-accent transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-700/50 flex items-center justify-center hover:bg-accent transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-700/50 flex items-center justify-center hover:bg-accent transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 border border-slate-700/50">
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for your message! We will contact you soon.');">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-slate-300">First Name</label>
+                                <input type="text" class="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-slate-300">Last Name</label>
+                                <input type="text" class="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-slate-300">Email</label>
+                            <input type="email" class="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent" placeholder="john@company.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-slate-300">Company</label>
+                            <input type="text" class="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent" placeholder="Your Company">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-slate-300">Message</label>
+                            <textarea rows="4" class="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent resize-none" placeholder="Tell us about your security needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-accent hover:bg-accentHover text-white py-4 rounded-lg font-semibold transition-all transform hover:scale-[1.02] flex items-center justify-center">
+                            Send Message
+                            <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-accent to-highlight rounded-lg flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold">SecuraMind</span>
+                    </div>
+                    <p class="text-slate-400 mb-6">Protecting digital intelligence with next-generation AI-powered security solutions.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Product</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li><a href="#" class="hover:text-accent transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Integrations</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Company</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li><a href="#" class="hover:text-accent transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Legal</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li><a href="#" class="hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm">&copy; 2024 SecuraMind. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Service Content Data
+        const serviceContent = {
+            'ai-automation': {
+                title: 'AI Automation & ERP Solutions',
+                content: `
+                    <div class="space-y-4">
+                        <p>Transform your business operations with our cutting-edge AI automation and Enterprise Resource Planning (ERP) solutions. We help organizations eliminate manual processes, reduce human error, and increase operational efficiency by up to 40%.</p>
+                        
+                        <h4 class="text-lg font-semibold text-white mt-4">Key Features:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Process Automation:</strong> Automate repetitive tasks, data entry, and workflow approvals using intelligent AI algorithms.</li>
+                            <li><strong>Custom ERP Development:</strong> Tailored ERP systems that integrate seamlessly with your existing infrastructure, including inventory, HR, finance, and CRM modules.</li>
+                            <li><strong>Machine Learning Integration:</strong> Predictive analytics for demand forecasting, anomaly detection, and intelligent decision-making.</li>
+                            <li><strong>Cloud-Based Solutions:</strong> Scalable cloud ERP hosting with 99.9% uptime guarantee and automatic backups.</li>
+                            <li><strong>Legacy System Migration:</strong> Smooth transition from outdated systems to modern AI-powered platforms without data loss.</li>
+                        </ul>
+
+                        <h4 class="text-lg font-semibold text-white mt-4">Industries We Serve:</h4>
+                        <p>Manufacturing, Retail, Healthcare, Logistics, Finance, and Professional Services.</p>
+
+                        <div class="bg-accent/10 p-4 rounded-lg border border-accent/20 mt-4">
+                            <p class="text-sm"><strong>Starting from:</strong> $2,500/month for full ERP suite or custom automation workflows from $5,000 setup.</p>
+                        </div>
+                    </div>
+                `
+            },
+            'digital-marketing': {
+                title: 'Digital Marketing Solutions',
+                content: `
+                    <div class="space-y-4">
+                        <p>Drive measurable growth with our data-driven digital marketing strategies. We combine SEO expertise, content marketing, and performance analytics to increase your online visibility and convert visitors into customers.</p>
+                        
+                        <h4 class="text-lg font-semibold text-white mt-4">Our Services Include:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>SEO Optimization:</strong> Technical SEO audits, keyword research, on-page optimization, and link building strategies to rank higher on Google.</li>
+                            <li><strong>Content Marketing:</strong> High-quality blog posts, whitepapers, case studies, and video content that establishes thought leadership.</li>
+                            <li><strong>PPC Management:</strong> Google Ads and Bing Ads campaign management with A/B testing and conversion rate optimization.</li>
+                            <li><strong>Email Marketing:</strong> Automated drip campaigns, newsletter management, and segmentation strategies with 99% delivery rates.</li>
+                            <li><strong>Analytics & Reporting:</strong> Real-time dashboards showing ROI, traffic sources, conversion paths, and customer acquisition costs.</li>
+                        </ul>
+
+                        <h4 class="text-lg font-semibold text-white mt-4">Why Choose Us:</h4>
+                        <p>Our Melbourne-based team understands the Australian market while leveraging global best practices. We focus on transparent reporting and measurable results, not vanity metrics.</p>
+
+                        <div class="bg-accent/10 p-4 rounded-lg border border-accent/20 mt-4">
+                            <p class="text-sm"><strong>Packages start from:</strong> $1,200/month for local SEO, $2,500/month for comprehensive digital strategy.</p>
+                        </div>
+                    </div>
+                `
+            },
+            'it-security': {
+                title: 'IT Security & Cybersecurity',
+                content: `
+                    <div class="space-y-4">
+                        <p>Protect your digital assets with enterprise-grade cybersecurity solutions. From threat monitoring to incident response, we provide comprehensive security frameworks that keep your business safe from evolving cyber threats.</p>
+                        
+                        <h4 class="text-lg font-semibold text-white mt-4">Security Solutions:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>24/7 Threat Monitoring:</strong> Real-time SOC (Security Operations Center) monitoring with AI-powered threat detection and immediate alerting.</li>
+                            <li><strong>Vulnerability Assessments:</strong> Penetration testing, security audits, and compliance checks (ISO 27001, Essential Eight, NIST).</li>
+                            <li><strong>Endpoint Protection:</strong> Advanced antivirus, EDR (Endpoint Detection and Response), and mobile device management.</li>
+                            <li><strong>Network Security:</strong> Firewall configuration, intrusion detection/prevention systems (IDS/IPS), and secure VPN setup.</li>
+                            <li><strong>Incident Response:</strong> Rapid response team available 24/7 for breach containment, forensic analysis, and recovery.</li>
+                            <li><strong>Security Awareness Training:</strong> Employee training programs to prevent phishing and social engineering attacks.</li>
+                        </ul>
+
+                        <h4 class="text-lg font-semibold text-white mt-4">Compliance & Certifications:</h4>
+                        <p>We help businesses meet Australian Privacy Principles (APP), GDPR, and industry-specific regulations like HIPAA for healthcare.</p>
+
+                        <div class="bg-accent/10 p-4 rounded-lg border border-accent/20 mt-4">
+                            <p class="text-sm"><strong>Security audits from:</strong> $3,500. Managed security services from $1,500/month.</p>
+                        </div>
+                    </div>
+                `
+            },
+            'facebook-marketing': {
+                title: 'Facebook Marketing & Advertising',
+                content: `
+                    <div class="space-y-4">
+                        <p>Maximize your ROI on the world's largest social media platform. Our Facebook marketing specialists create targeted campaigns that reach your ideal customers while minimizing ad spend waste.</p>
+                        
+                        <h4 class="text-lg font-semibold text-white mt-4">Campaign Services:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Audience Targeting:</strong> Advanced demographic, behavioral, and interest-based targeting including lookalike audiences from your customer data.</li>
+                            <li><strong>Ad Creative Development:</strong> Professional image and video ad creation, carousel ads, and dynamic product ads.</li>
+                            <li><strong>Campaign Management:</strong> A/B testing, budget optimization, bid management, and retargeting strategies.</li>
+                            <li><strong>Pixel Installation:</strong> Complete Facebook Pixel setup for conversion tracking, custom audiences, and remarketing.</li>
+                            <li><strong>Lead Generation:</strong> Integrated lead forms and CRM connections to capture and nurture prospects automatically.</li>
+                            <li><strong>Performance Analytics:</strong> Weekly reports on reach, engagement, CTR, CPC, and cost per acquisition.</li>
+                        </ul>
+
+                        <h4 class="text-lg font-semibold text-white mt-4">Ideal For:</h4>
+                        <p>E-commerce stores, local service businesses, B2B companies, and professional services looking to generate qualified leads.</p>
+
+                        <div class="bg-accent/10 p-4 rounded-lg border border-accent/20 mt-4">
+                            <p class="text-sm"><strong>Management fees:</strong> $800/month plus ad spend (minimum $1,000/month ad budget recommended).</p>
+                        </div>
+                    </div>
+                `
+            },
+            'social-automation': {
+                title: 'Instagram & TikTok Automation',
+                content: `
+                    <div class="space-y-4">
+                        <p>Grow your brand presence on visual platforms with intelligent automation tools. We help you maintain consistent posting schedules, engage with your community, and scale your social media without increasing headcount.</p>
+                        
+                        <h4 class="text-lg font-semibold text-white mt-4">Automation Features:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Content Scheduling:</strong> Bulk upload posts, stories, and reels with optimal timing based on audience engagement analytics.</li>
+                            <li><strong>Hashtag Research:</strong> AI-powered hashtag suggestions for maximum reach and trending hashtag monitoring.</li>
+                            <li><strong>Auto-Engagement:</strong> Automated liking, commenting, and following within your target demographic (compliant with platform policies).</li>
+                            <li><strong>DM Management:</strong> Automated welcome messages, FAQ responses, and lead qualification through direct messages.</li>
+                            <li><strong>Content Creation:</strong> Access to Canva Pro templates, stock video libraries, and trending audio databases.</li>
+                            <li><strong>Analytics Dashboard:</strong> Follower growth tracking, engagement rate analysis, and competitor benchmarking.</li>
+                        </ul>
+
+                        <h4 class="text-lg font-semibold text-white mt-4">Platform-Specific Strategies:</h4>
+                        <p>Instagram: Focus on Reels and Stories for algorithm boost. TikTok: Trend-jacking strategies and viral content formats tailored to Australian audiences.</p>
+
+                        <div class="bg-accent/10 p-4 rounded-lg border border-accent/20 mt-4">
+                            <p class="text-sm"><strong>Automation tools setup:</strong> From $1,500. Full management packages from $1,200/month per platform.</p>
+                        </div>
+                    </div>
+                `
+            },
+            'physical-security': {
+                title: 'Physical Security Solutions',
+                content: `
+                    <div class="space-y-4">
+                        <p>Secure your premises with state-of-the-art physical security systems. From high-definition CCTV to biometric access control, we provide comprehensive protection for offices, warehouses, and retail locations across Melbourne.</p>
+                        
+                        <h4 class="text-lg font-semibold text-white mt-4">Security Systems:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>HD Surveillance (CCTV):</strong> 4K IP camera systems with night vision, motion detection, and 30-day cloud storage. Remote viewing via mobile app.</li>
+                            <li><strong>Access Control:</strong> Keycard, fob, and biometric fingerprint/facial recognition entry systems with audit trails.</li>
+                            <li><strong>Alarm Systems:</strong> Intrusion detection sensors, glass break detectors, and 24/7 monitoring station connection.</li>
+                            <li><strong>Intercom Systems:</strong> Video intercoms with mobile app integration for remote visitor management.</li>
+                            <li><strong>Security Consulting:</strong> Risk assessments, security audits, and custom security plan development for your specific location.</li>
+                            <li><strong>Integration:</strong> Connect physical security with your IT systems for unified threat management.</li>
+                        </ul>
+
+                        <h4 class="text-lg font-semibold text-white mt-4">Installation & Support:</h4>
+                        <p>Licensed security installers, full warranty on all equipment, and ongoing maintenance packages. We handle all compliance requirements for Australian security standards.</p>
+
+                        <div class="bg-accent/10 p-4 rounded-lg border border-accent/20 mt-4">
+                            <p class="text-sm"><strong>Basic camera packages:</strong> From $2,000. Enterprise access control systems: $5,000+ depending on doors/users.</p>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // Modal Functions
+        function openServiceModal(serviceKey) {
+            const modal = document.getElementById('service-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            if (serviceContent[serviceKey]) {
+                title.textContent = serviceContent[serviceKey].title;
+                content.innerHTML = serviceContent[serviceKey].content;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+                // Re-initialize icons for modal content
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+            }
+        }
+
+        function closeServiceModal() {
+            const modal = document.getElementById('service-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeServiceModal();
+            }
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-primary/95');
+            } else {
+                nav.classList.remove('bg-primary/95');
+            }
+        });
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
